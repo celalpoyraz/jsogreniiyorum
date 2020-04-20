@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Adam_Asmaca!</title>
+</head>
+
+<body>
+<h1><center>Adam Asmaca Oyununa Hoşgeldiniz. <br>Oyunu Tekrar Başlatmak için Sayfayı Yenileyin.</center></h1>
+<link rel="stylesheet" type="text/css" href="../../css/adamasmaca.css">
+	<div class="container-2 " id="burayaKoy">
+</div>
+<div class="container">
+<button type="button" class="btn"  value="a" onclick='f1(this)'>A</button>
+<button type="button" class="btn"  value="b" onclick='f1(this)'>B</button>
+<button type="button" class="btn"  value="c" onclick='f1(this)'>C</button>
+<button type="button" class="btn"  value="d" onclick='f1(this)'>D</button>
+<button type="button" class="btn"  value="e" onclick='f1(this)'>E</button>
+<button type="button" class="btn"  value="f" onclick='f1(this)'>F</button>
+<button type="button" class="btn"  value="g" onclick='f1(this)'>G</button>
+<button type="button" class="btn"  value="ğ" onclick='f1(this)'>Ğ</button>
+<button type="button" class="btn"  value="h" onclick='f1(this)'>H</button>
+<button type="button" class="btn"  value="ı" onclick='f1(this)'>I</button>
+<button type="button" class="btn"  value="i" onclick='f1(this)'>İ</button>
+<button type="button" class="btn"  value="j" onclick='f1(this)'>J</button>
+<button type="button" class="btn"  value="k" onclick='f1(this)'>K</button>
+<button type="button" class="btn"  value="l" onclick='f1(this)'>L</button>
+<button type="button" class="btn"  value="m" onclick='f1(this)'>M</button>
+<button type="button" class="btn"  value="n" onclick='f1(this)'>N</button>
+<button type="button" class="btn"  value="o" onclick='f1(this)'>O</button>
+<button type="button" class="btn"  value="ö" onclick='f1(this)'>Ö</button>
+<button type="button" class="btn"  value="p" onclick='f1(this)'>P</button>
+<button type="button" class="btn"  value="r" onclick='f1(this)'>R</button>
+<button type="button" class="btn"  value="s" onclick='f1(this)'>S</button>
+<button type="button" class="btn"  value="ş" onclick='f1(this)'>Ş</button>
+<button type="button" class="btn"  value="t" onclick='f1(this)'>T</button>
+<button type="button" class="btn"  value="u" onclick='f1(this)'>U</button>
+<button type="button" class="btn"  value="ü" onclick='f1(this)'>Ü</button>
+<button type="button" class="btn"  value="v" onclick='f1(this)'>V</button>
+<button type="button" class="btn"  value="y" onclick='f1(this)'>Y</button>
+<button type="button" class="btn"  value="z" onclick='f1(this)'>Z</button>
+</div>
+
+<div id="hak"></div>
+ <script>
+ 
+ 	var burayaKoy=document.getElementById("burayaKoy");
+ 	var kalanHak=2;
+	burayaKoy.innerHTML="";
+	
+ // Kelimeler adlı dizi oluşturduk
+ var kelimeler = [
+ "javascript",
+ "php",
+ "angular",
+ "asp",
+ "bilgisayar",
+ "elektronik",
+ "yazılım",
+ "yönetim bilişim"
+ ];
+ // Random kelimeler oluşturduk
+ var kelime = kelimeler[Math.floor(Math.random() * kelimeler.length)];
+ // Cevapları tutacağımız diziyi ayarlayalım
+ var answerArray = [];
+ for (var i = 0; i < kelime.length; i++) {
+ 	var harf = document.createElement("button");
+harf.setAttribute("type","button")
+harf.classList.add("btn2");
+ harf.style.cssText="margin-left: 2px";
+harf.textContent="_";
+burayaKoy.appendChild(harf);
+ answerArray[i] = "_";
+ }
+ 
+ var kalan_boyut=kelime.length;
+
+ function f1(deger){  
+    var tahmin =deger.value;
+    var harfsec= document.querySelectorAll(".btn2");
+     for (var j = 0; j < kelime.length; j++) {
+ if (kelime[j] === tahmin) {
+
+ harfsec[j].textContent=tahmin;
+ kalan_boyut --;
+ }
+ }
+ if (kalan_boyut === 0) {
+	alert("Tebrikler Cevabı Bildiniz Tekrar Oynamak İster misin ? :) Cevap="+kelime);
+} 
+}
+
+ 
+ 
+
+ </script>
+</body>
+</html>
